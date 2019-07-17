@@ -26,7 +26,7 @@ app.use(require('./routes/index'));
 app.use(require('./routes/authentication'));
 app.use('/articles', require('./routes/articles'));
 //Publico
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 //iniciar el servidor
