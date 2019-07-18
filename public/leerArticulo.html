@@ -16,6 +16,15 @@
   <link href="css/business-casual.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="img/icon.ico">
 
+  <script src="https://cdn.tiny.cloud/1/7cgph72rj13ulfxrbwmsvamegufr9i6z0ra9sk9c8afdasyh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>tinymce.init({
+    selector:'textarea', 
+    plugins: 'image emoticons a11ychecker advcode casechange formatpainter linkchecker lists checklist media mediaembed pageembed permanentpen power paste tinycomments tinydrive tinymcespellchecker autoresize',
+    toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter insertfile pageembed permanentpen image',
+    toolbar_drawer: 'floating',
+    tinycomments_mode: 'embedded',
+    tinycomments_author: 'Author'});
+  </script>
 </head>
 
 <body>
@@ -46,46 +55,20 @@
             </a>
               <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="nuevoArticulo.html">Nuevo Artículo</a>
-                <a class="dropdown-item" href="leerArticulo.html">Leer Artículo</a>
+                <a class="dropdown-item" href="#">Leer Artículo</a>
               </div>
             </li>
         </ul>
       </div>
     </div>
   </nav>
+  <br><br>
 
-  <section class="page-section clearfix">
-    <div class="container">
-      <div class="intro">
-        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/papa.png" alt="">
-        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-          <h2 class="section-heading mb-4">
-            <span class="section-heading-lower">Laudato Si'</span>
-          </h2>
-          <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque tellus, eleifend vel vestibulum interdum, pellentesque non ante. Vestibulum in lectus vitae tellus convallis tempus. In ut pretium lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam ultricies eleifend enim eget volutpat. Aenean purus tellus, lobortis ac auctor et, suscipit ac urna. Aliquam justo erat, condimentum ornare semper non, laoreet non mauris. 
-          </p>
-          <div class="intro-button mx-auto">
-            <a class="btn btn-primary btn-xl" href="https://www.uc.cl/enciclica-laudato-si/la-enciclica" target="_blank">LEER MÁS</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="page-section cta">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <div class="cta-inner text-center rounded">
-            <h2 class="section-heading mb-4">
-              <span class="section-heading-lower">Laudato Si'</span>
-            </h2>
-            <p class="mb-0">Aliquam quis nisi sed diam euismod accumsan. Ut elementum tortor eget nunc vestibulum dictum. Sed id elit dapibus, sagittis erat nec, cursus nisl. Duis malesuada odio lorem, et condimentum arcu feugiat quis. In hac habitasse platea dictumst. Sed faucibus rhoncus augue, nec fringilla nunc rutrum eu. Sed id lacinia turpis. In sed nunc tortor. Quisque placerat eros sem, vel convallis risus mollis non. Nam tempor erat quis arcu faucibus, vel laoreet lacus pellentesque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum mattis tellus elit. Sed congue massa sed aliquet dictum. Sed a enim feugiat, rhoncus ipsum et, aliquam nunc. In ut sem erat.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <h1>Comentarios</h1>
+  <form method="post">
+    <textarea id="textarea"></textarea>
+    <button class="btn btn-primary">Comentar</button>
+  </form>
 
   <footer class="footer text-faded text-center py-5">
     <div class="container">
