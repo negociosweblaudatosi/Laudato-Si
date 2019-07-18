@@ -3,6 +3,12 @@ const morgan = require('morgan');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const app = express();
+const passport = require('passport');
+const flash = require('connect-flash');
+
+// Intializaciones
+const app = express();
+require('./controllers/passport');
 
 //Configuraciones
 app.set('port',process.env.PORT || 4000);
@@ -18,6 +24,9 @@ app.set('view engine','.hbs');
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 //variables GLobales
 app.use((req,res,next)=>{next()});
 

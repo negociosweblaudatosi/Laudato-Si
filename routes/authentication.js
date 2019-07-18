@@ -7,32 +7,33 @@ const {
 } = require('../controllers/auth');
 
 // SIGNUP
-router.get('/signup', (req, res) => {
-    res.render('auth/signup');
+router.get('/SignUp', (req, res) => {
+    res.render('auth/SignUp');
 });
 
-router.post('/signup', passport.authenticate('local.signup', {
+router.post('/SignUp', passport.authenticate('local.SignUp', {
     successRedirect: '/profile',
-    failureRedirect: '/signup',
+    failureRedirect: '/SignUp',
     failureFlash: true
 }));
 
 // SINGIN
-router.get('/signin', (req, res) => {
-    res.render('auth/signin');
+router.get('/SignIn', (req, res) => {
+    res.render('auth/SignIn');
+    console.log('visto');
 });
 
-router.post('/signin', (req, res, next) => {
+router.post('/SignIn', (req, res, next) => {
     req.check('nombreUsuario', 'Username is Required').notEmpty();
     req.check('contrasena', 'Password is Required').notEmpty();
     const errors = req.validationErrors();
     if (errors.length > 0) {
         req.flash('message', errors[0].msg);
-        res.redirect('/signin');
+        res.redirect('/SignIn');
     }
-    passport.authenticate('local.signin', {
+    passport.authenticate('local.SignIn', {
         successRedirect: '/profile',
-        failureRedirect: '/signin',
+        failureRedirect: '/SignIn',
         failureFlash: true
     })(req, res, next);
 });
@@ -45,5 +46,15 @@ router.get('/logout', (req, res) => {
 router.get('/profile', isLoggedIn, (req, res) => {
     res.render('profile');
 });
+
+  router.post('/SignIn', (req, res, next) => {
+
+      passport.authenticate('local.SignIn', {
+          successRedirect: '/profile',
+          failureRedirect: '/SignIn',
+          failureFlash: true
+      })(req, res, next);
+
+  });
 
 module.exports = router;
